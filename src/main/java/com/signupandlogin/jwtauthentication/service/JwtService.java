@@ -18,7 +18,9 @@ import java.util.function.Function;
 public class JwtService {
 
     //this is the secret key which is used to sign the jwt token
-    private static final String SECRET_KEY = "d7dcb56a5ab7183f206d5e072525d383c7cd0649f3efc8ff6822b432ebb9f4cf";
+//    private static final String SECRET_KEY = "d7dcb56a5ab7183f206d5e072525d383c7cd0649f3efc8ff6822b432ebb9f4cf";
+    private static final String SECRET_KEY = "c8d7c086fe64a415ee1fafe90b1a663ef635f903b129d2bd752af401c817bee0";
+
 
     //this method is used to extract the claims from the jwt token
     public <T> T extractClaims(String jwt , Function<Claims , T> claimsResolver) {
@@ -41,7 +43,7 @@ public class JwtService {
                 .setClaims(extraClaims)
                 .setSubject(userDetails.getUsername())
                 .setIssuedAt(new Date(System.currentTimeMillis()))
-                .setExpiration(new Date(System.currentTimeMillis() + 1000*60*24))
+                .setExpiration(new Date(System.currentTimeMillis() + 1000*60*24*30))
                 .signWith(getSignInKey(), SignatureAlgorithm.HS256)
                 .compact();
 
@@ -49,7 +51,7 @@ public class JwtService {
 
     public Boolean isTokenValid(String jwt , UserDetails userDetails){
         final String username = extractUsername(jwt);
-        return (username.equals(userDetails.getUsername()) && isJwtExpired(jwt));
+        return (username.equals(userDetails.getUsername())) && !isJwtExpired(jwt);
     }
 
     private boolean isJwtExpired(String jwt) {

@@ -25,7 +25,7 @@ public class AuthenticationService {
     private final OtpService otpService;
     private final OtpRepository otpRepository;
     private final EmailService emailService;
-    private static final int OTP_EXPIRATION_MIN = 2;
+    private static final int OTP_EXPIRATION_MIN = 10;
 
 
 
@@ -36,8 +36,8 @@ public class AuthenticationService {
 
         if(userRepository.findByEmail(registerRequest.getEmail()).isEmpty()){
             user = User.builder()
-                    .firstName(registerRequest.getFirstName())
-                    .lastName(registerRequest.getLastName())
+                    .firstName(registerRequest.getFirstName().trim())
+                    .lastName(registerRequest.getLastName().trim())
                     .email(registerRequest.getEmail())
                     .password(passwordEncoder.encode(registerRequest.getPassword()))
                     .isVerified(false)
@@ -54,8 +54,8 @@ public class AuthenticationService {
                         .message("User already exists")
                         .build();
             }
-            user.setFirstName(registerRequest.getFirstName());
-            user.setLastName(registerRequest.getLastName());
+            user.setFirstName(registerRequest.getFirstName().trim());
+            user.setLastName(registerRequest.getLastName().trim());
             user.setEmail(registerRequest.getEmail());
             user.setPassword(passwordEncoder.encode(registerRequest.getPassword()));
             user.setRole(registerRequest.getRole());
@@ -158,7 +158,7 @@ public class AuthenticationService {
         LocalDateTime otpExpiryTime = LocalDateTime.now().plusMinutes(OTP_EXPIRATION_MIN);
 
         Otp previousOtp = otpRepository.findByEmail(resendOtpRequest.getEmail()).orElse(null);
-        if(previousOtp!=null && LocalDateTime.now().isBefore(previousOtp.getExpiryTime().minusMinutes(1))){
+        if(previousOtp!=null && LocalDateTime.now().isBefore(previousOtp.getExpiryTime().minusMinutes(9))){
             return AuthenticationResponse
                     .builder()
                     .message("Wait fo 1 minute to send otp again")
