@@ -1,9 +1,11 @@
-# JWT-Authentication-and-Authorization-SpringSecurity-6.0
-## Postman Documentation link :- https://documenter.getpostman.com/view/29367403/2s9YsDjuW8
+# 🔐🔐JWT-Authentication-and-Authorization🪪🪪-SpringSecurity-6.0
+## Postman 🚀 Documentation link :- https://documenter.getpostman.com/view/29367403/2s9YsDjuW8
 
-## Use this url :- https://jwt-authentication-jcv1.onrender.com/ instead of http://localhost8080
+## Use this url 🛜:- https://jwt-authentication-jcv1.onrender.com/ instead of http://localhost8080
 
 ### This Spring Boot application demonstrates the implementation of JWT (JSON Web Token) authentication and authorization. JWT is used for secure, stateless user access, making it efficient for communication between the client and server.
+## ![image](https://github.com/Sarthakverse/JWT-Authentication-and-Authorization-SpringSecurity-6.0/assets/117356021/7797386b-0d2a-4775-92e4-0ca9a5e23df9)
+
 
 # TECHNOLOGIES USED
 
@@ -33,3 +35,4 @@
 
 ## AUTHORIZATION:
 ### The server checks user roles and permissions for resource access
+
