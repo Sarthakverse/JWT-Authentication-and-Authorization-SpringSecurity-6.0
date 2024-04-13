@@ -4,6 +4,7 @@
 ## Use this url 🛜:- https://jwt-authentication-jcv1.onrender.com/ instead of http://localhost8080
 
 ### This Spring Boot application demonstrates the implementation of JWT (JSON Web Token) authentication and authorization. JWT is used for secure, stateless user access, making it efficient for communication between the client and server.
+## ![WhatsApp Image 2024-04-06 at 09 57 38_beb35e37](https://github.com/Sarthakverse/JWT-Authentication-and-Authorization-SpringSecurity-6.0/assets/117356021/0fb6674e-e4b6-448f-9c09-dc869930d6c4)
 ## ![image](https://github.com/Sarthakverse/JWT-Authentication-and-Authorization-SpringSecurity-6.0/assets/117356021/d0c7dcc9-ea92-46d8-bd28-c7ac5f4657db) 
 ## ![image](https://github.com/Sarthakverse/JWT-Authentication-and-Authorization-SpringSecurity-6.0/assets/117356021/df232297-8ed1-4351-a162-9759d7dbde1a) 
  
